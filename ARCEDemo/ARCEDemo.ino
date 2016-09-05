@@ -233,27 +233,27 @@ void loop() {
   arce.display.clearDisplay();
   
   // Read keys
-  if(!digitalRead(KEY_UP)) {
+  if(arce.display.pressed(UP_BUTTON)) {
     
     sprintf(key, "UP");
     arce.player.moveDir = PLAYER_MOVE_FORWARD;
   }
   
-  if(!digitalRead(KEY_DOWN)) {
+  if(arce.display.pressed(DOWN_BUTTON)) {
     
     sprintf(key, "DOWN");
     arce.player.moveDir = PLAYER_MOVE_BACKWARD;
   }
   
-  if(!digitalRead(KEY_LEFT)) {
+  if(arce.display.pressed(LEFT_BUTTON)) {
     
     sprintf(key, "LEFT");
   }
   
-  if(!digitalRead(KEY_RIGHT)) {
+  if(arce.display.pressed(RIGHT_BUTTON)) {
     
     sprintf(key, "RIGHT");
-    
+  
     // Update ARCE view
     arce.view += 1;
     arce.view %= 4;
@@ -280,13 +280,13 @@ void loop() {
     delay(150);
   }
   
-  if(!digitalRead(KEY_A)) {
+  if(arce.display.pressed(A_BUTTON)) {
     
     sprintf(key, "A");
     arce.player.rotDir = PLAYER_ROTATE_LEFT;
   }
   
-  if(!digitalRead(KEY_B)) {
+  if(arce.display.pressed(B_BUTTON)) {
      
     sprintf(key, "B");
     arce.player.rotDir = PLAYER_ROTATE_RIGHT;
